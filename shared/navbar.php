@@ -1,3 +1,4 @@
+<script src="/assets/js/filter.js"></script>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="/index.php">Market</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,8 +19,8 @@
         </ul>
         <?php if ($_SERVER["REQUEST_URI"] === "/index.php" || $_SERVER["REQUEST_URI"] === "/") : ?>
             <div class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0 mr-4" onclick="">Search</button>
+                <input id="filter-query" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0 mr-4" onclick="filter(document.getElementById('filter-query').value, document.getElementById('product-container'))">Search</button>
             </div>
         <?php endif; ?>
         <?php if (isset($_SESSION["userid"])) : ?>
